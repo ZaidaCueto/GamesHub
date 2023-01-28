@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projetos de programaçao\\exercicios\\toDoCsharp\\XadrezHubGames\\XadrezHubGames\\XadrezHubGames\\XadrezHubGames.csproj",
-      "projectName": "XadrezHubGames",
-      "projectPath": "C:\\projetos de programaçao\\exercicios\\toDoCsharp\\XadrezHubGames\\XadrezHubGames\\XadrezHubGames\\XadrezHubGames.csproj",
+      "projectUniqueName": "C:\\projetos de programaçao\\exercicios\\toDoCsharp\\XadrezHubGames\\XadrezHubGames\\XadrezHubGames\\HubGames.csproj",
+      "projectName": "HubGames",
+      "projectPath": "C:\\projetos de programaçao\\exercicios\\toDoCsharp\\XadrezHubGames\\XadrezHubGames\\XadrezHubGames\\HubGames.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
       "outputPath": "C:\\projetos de programaçao\\exercicios\\toDoCsharp\\XadrezHubGames\\XadrezHubGames\\XadrezHubGames\\obj\\",
       "projectStyle": "PackageReference",
