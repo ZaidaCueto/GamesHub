@@ -1,5 +1,5 @@
 ﻿
-namespace tabuleiro
+namespace model
 {
     public class Peca
     {
@@ -11,14 +11,15 @@ namespace tabuleiro
 
 
 
-        public Peca(Posicao posicao, Cor cor, Tabeleiro tab)
+        public Peca(Tabeleiro tab, Cor cor)
         {
-            this.posicao = posicao;
+            this.posicao = null;
             this.cor = cor;
             this.qteMovimentos = 0;
             this.tab = tab;
         }
 
+    
     }
   
  

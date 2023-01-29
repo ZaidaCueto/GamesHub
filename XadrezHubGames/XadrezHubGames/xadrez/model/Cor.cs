@@ -1,5 +1,5 @@
 ﻿
-namespace tabuleiro
+namespace model
 {
 public enum Cor
     {

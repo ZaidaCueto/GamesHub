@@ -1,4 +1,4 @@
-﻿using tabuleiro;
+﻿using model;
 
 
 
@@ -12,24 +12,25 @@ namespace xadrez
             for(int i = 0; i < tab.linhas; i++)
             {
 
-                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("---------------------------------------");
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (tab.peca(i,j )== null)
+                    if (tab.peca(i,j ) == null)
                     {
-                        Console.Write(" - ");
-                        Console.Write(" │ ");
+                        Console.Write("-");
+                        Console.Write("  │ ");
                     }
                     else
                     {
-                        Console.Write(tab.peca(i, j) + "   ");
+                        Console.Write(tab.peca(i, j) + "  │ ");
                     }
                 }
                 Console.WriteLine();
+
                
              
             }
-            Console.Write("-----------------------------------------------");
+            Console.WriteLine("---------------------------------------");
         }
     }
 }

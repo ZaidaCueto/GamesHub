@@ -1,4 +1,4 @@
-﻿namespace tabuleiro
+﻿namespace model
 {
     public class Posicao
     {
