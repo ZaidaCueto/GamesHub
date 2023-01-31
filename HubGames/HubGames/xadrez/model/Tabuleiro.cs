@@ -1,12 +1,12 @@
 ﻿namespace model
 {
-    public class Tabeleiro
+    public class Tabuleiro
     {
         public int linhas { get; set; }
         public int colunas { get; set; }
         private Peca[,] pecas;
 
-        public Tabeleiro(int linha, int coluna)
+        public Tabuleiro(int linha, int coluna)
         {
             this.linhas = linha;
             this.colunas = coluna;
@@ -29,6 +29,21 @@
             return peca(pos) != null;
         }
 
+        public Peca retirarPeca(Posicao pos)
+        {
+            if (peca(pos) == null)
+                return null;
+            {
+                Peca aux = peca(pos);
+                aux.posicao = null;
+                pecas[pos.linha, pos.coluna] = null;
+                return aux;
+
+
+            }
+        }
+
+
         public void colocarPeca(Peca p, Posicao pos)
         {
             if(existePeca(pos))
@@ -39,6 +54,18 @@
             p.posicao = pos;
         }
 
+        public Peca RetiraPeca(Posicao pos)
+        {
+            if (peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
+             
+        }
         public bool posicaoValida(Posicao pos)
         {
             if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)

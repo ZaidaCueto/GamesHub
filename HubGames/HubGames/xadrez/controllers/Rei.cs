@@ -4,7 +4,7 @@ namespace controllers
 {
     public class Rei : Peca
     {
-        public Rei(Tabeleiro tab, Cor cor) : base(tab, cor)
+        public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
 
         }
