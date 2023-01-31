@@ -4,7 +4,7 @@ namespace controllers
 {
   public class Torre : Peca
     {
-        public Torre(Tabeleiro tab, Cor cor) : base(tab, cor) {
+        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor) {
         }
 
         public override string ToString()

@@ -6,23 +6,28 @@ namespace xadrez
 {
     public class TelaXadrez
     {
-        public static void imprimirTabuleiro(Tabeleiro tab)
+        public static void imprimirTabuleiro(Tabuleiro tab)
         {
    
             for(int i = 0; i < tab.linhas; i++)
             {
+                Console.WriteLine("   ---------------------------------");
+                ConsoleColor aux1 = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.Write(8 - i + " " + " ");
+                Console.ForegroundColor = aux1;
+                Console.Write("│ ");
 
-                Console.WriteLine("---------------------------------------");
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     if (tab.peca(i,j ) == null)
                     {
                         Console.Write("-");
-                        Console.Write("  │ ");
+                        Console.Write(" │ ");
                     }
                     else
                     {
-                        Console.Write(tab.peca(i, j) + "  │ ");
+                        Console.Write(tab.peca(i, j) + " │ ");
                     }
                 }
                 Console.WriteLine();
@@ -30,7 +35,7 @@ namespace xadrez
                
              
             }
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("   ---------------------------------");
         }
     }
 }
