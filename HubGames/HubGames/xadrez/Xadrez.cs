@@ -17,9 +17,16 @@ namespace xadrez
 
                     Console.Clear();
                     TelaXadrez.imprimirTabuleiro(partida.tab);
+
                     Console.WriteLine();
                     Console.Write("Oringem: ");
                     Posicao origem = TelaXadrez.lerPosicaoXadres().toPosicao();
+
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    TelaXadrez.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+                    Console.WriteLine();
                     Console.Write("Deatino: ");
                     Posicao destino = TelaXadrez.lerPosicaoXadres().toPosicao();
 
@@ -32,10 +39,6 @@ namespace xadrez
                 Console.WriteLine(e.Message);
 
             }
-
-
-
-
             Console.ReadKey();
 
         }

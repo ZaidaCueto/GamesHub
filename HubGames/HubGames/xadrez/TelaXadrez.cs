@@ -7,37 +7,63 @@ namespace xadrez
 {
     public class TelaXadrez
     {
+
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
+
 
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.WriteLine("   ---------------------------------");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(8 - i + " " + " ");
+                Console.Write(8 - i + "  ");
                 Console.ResetColor();
-                Console.Write("│ ");
+                Console.Write("│");
 
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (tab.peca(i, j) == null)
-                    {
-                        Console.Write("-");
-                        Console.Write(" │ ");
-                    }
-                    else
-                    {
-                        impremirPeca(tab.peca(i, j));
-
-                        Console.Write(" │ ");
-                    }
+                    
+                    impremirPeca(tab.peca(i, j));
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("   ---------------------------------");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("     A   B   C   D   E   F   G   H");
+            Console.WriteLine("   A   B   C   D   E   F   G   H");
+            Console.ResetColor();
+        }
+        public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
+        {
+           
+
+            for (int i = 0; i < tab.linhas; i++)
+            {
+                Console.WriteLine("   ---------------------------------");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(8 - i + "  ");
+                Console.ResetColor();
+                Console.Write("│");
+
+                for (int j = 0; j < tab.colunas; j++)
+                {
+                    if (posicoesPossiveis[i, j])
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkYellow;
+                    }
+                    else
+                    {
+                        Console.ResetColor();
+                    }
+                    impremirPeca(tab.peca(i, j));
+                    Console.ResetColor();
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("   ---------------------------------");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("   A   B   C   D   E   F   G   H");
             Console.ResetColor();
         }
 
@@ -55,18 +81,29 @@ namespace xadrez
 
         public static void impremirPeca(Peca peca)
         {
-            if (peca.cor == Cor.BRANCA)
+            if (peca == null)
             {
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.Write(peca);
-                Console.ResetColor();
+                Console.Write(" - ");
+                Console.Write("│");
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(peca);
-                Console.ResetColor();
+                if (peca.cor == Cor.BRANCA)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write(peca);
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(peca);
+                    Console.ResetColor();
+                }
+                Console.Write("│");
             }
+
+
 
         }
 
