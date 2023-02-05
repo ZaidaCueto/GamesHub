@@ -30,7 +30,7 @@ namespace xadrez
             }
             Console.WriteLine("   ---------------------------------");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("   A   B   C   D   E   F   G   H");
+            Console.WriteLine("     A   B   C   D   E   F   G   H");
             Console.ResetColor();
         }
         public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
@@ -63,7 +63,7 @@ namespace xadrez
             }
             Console.WriteLine("   ---------------------------------");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("   A   B   C   D   E   F   G   H");
+            Console.WriteLine("     A   B   C   D   E   F   G   H");
             Console.ResetColor();
         }
 

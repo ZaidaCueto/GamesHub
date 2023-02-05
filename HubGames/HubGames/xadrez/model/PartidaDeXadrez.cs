@@ -1,14 +1,14 @@
 ﻿
 using controllers;
+using System.Reflection;
 
 namespace model
 {
     public class PartidaDeXadrez
     {
         public Tabuleiro tab { get; private set; }
-        private int turno;
-        private Cor jogadorAtual;
-
+        public int turno { get; private set; }
+        public Cor jogadorAtual { get; private set; }
         public bool terminada { get; private set; }
 
         public PartidaDeXadrez()
@@ -18,6 +18,50 @@ namespace model
             jogadorAtual = Cor.BRANCA;
             terminada = false;
             ColocarPecas();
+        }
+
+        public void realizaJogada(Posicao origem, Posicao destino)
+        {
+            ExecutarMovimento(origem, destino);
+            turno++;
+            nudarJogador();
+        }
+
+        public void validarPosicaoDeOrigem(Posicao pos)
+        {
+            if (tab.peca(pos) == null)
+            {
+                throw new TabuleiroException("Não existe peça na posição de origem escolhida!");
+            }
+            if(jogadorAtual != tab.peca(pos).cor)
+            {
+                throw new TabuleiroException("não é sua vez!");
+            }
+            if(!tab.peca(pos).existeMovimentosPossiveis())
+            {
+                throw new TabuleiroException("Não há movimentos possíveis para de origem escolhida!");
+            }
+        }
+
+        public void validarPosicaoDeDestino(Posicao origem, Posicao destino)
+        {
+if(!tab.peca(origem).podeMoverPara(destino))
+            {
+                throw new TabuleiroException("POsicão de destino inválido!");
+            }
+        }
+
+        private void nudarJogador()
+        {
+      if (jogadorAtual == Cor.BRANCA)
+            {
+                jogadorAtual = Cor.PRETA;
+            }
+            else
+            {
+                jogadorAtual = Cor.BRANCA;
+            }
+
         }
 
         private void ColocarPecas()
