@@ -14,7 +14,7 @@ namespace XadrezHubGames
         {
             Console.WriteLine("Digite um o número que representa o seu jogo escolhido");
             Console.WriteLine("1 - Xadrez ");
-            Console.WriteLine("2 - Jogo da aelha");
+            Console.WriteLine("2 - Jogo da velha");
             Console.WriteLine("3 - sair do jogo");
             Console.Write("Digite qual jogo você quer jogar: ");
 
@@ -22,7 +22,8 @@ namespace XadrezHubGames
 
         private static void Xadrez()
         {
-            Xadrez x = new Xadrez();
+            Xadrez x
+                = new Xadrez();
         }
 
         private static void JogoDaVelha()

@@ -21,7 +21,7 @@ namespace controllers
 
         public override string ToString()
         {
-            return "" + coluna + linha ;
+            return "," + coluna + linha ;
         }
 
 

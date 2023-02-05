@@ -1,5 +1,6 @@
 ﻿using model;
 
+
 namespace xadrez
 {
   public class Xadrez
@@ -11,8 +12,20 @@ namespace xadrez
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
+                while(!partida.terminada) 
+                {
 
-                TelaXadrez.imprimirTabuleiro(partida.tab);
+                    Console.Clear();
+                    TelaXadrez.imprimirTabuleiro(partida.tab);
+                    Console.WriteLine();
+                    Console.Write("Oringem: ");
+                    Posicao origem = TelaXadrez.lerPosicaoXadres().toPosicao();
+                    Console.Write("Deatino: ");
+                    Posicao destino = TelaXadrez.lerPosicaoXadres().toPosicao();
+
+                    partida.ExecutarMovimento(origem, destino);
+                }
+               
             }
             catch (TabuleiroException e)
             {

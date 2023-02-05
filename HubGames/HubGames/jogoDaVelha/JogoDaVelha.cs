@@ -22,7 +22,7 @@ namespace jogoDaVelha
 
             Console.WriteLine("Qual o nome do primeiro jogador(a)?");
             string jogador1 = Console.ReadLine();
-            Console.WriteLine("Qual o nome do primeiro jogador(a)");
+            Console.WriteLine("Qual o nome do Segundo jogador(a)");
             string jogador2 = Console.ReadLine();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -168,7 +168,7 @@ namespace jogoDaVelha
                     if (vez == 1)
                     {
                         pontuação1++;
-                        Console.WriteLine($"{jogador1} wins!");
+                        Console.WriteLine($"{jogador1} Ganhou!");
                         Console.WriteLine("O que você gostaria de fazer agora?");
                         Console.WriteLine("1. Jogar de novo");
                         Console.WriteLine("2. Sair");
