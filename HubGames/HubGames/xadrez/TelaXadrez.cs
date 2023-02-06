@@ -1,12 +1,57 @@
 ﻿using controllers;
 using model;
 
-
-
 namespace xadrez
 {
     public class TelaXadrez
     {
+
+        public static void imprimirPatida(PartidaDeXadrez partida)
+        {
+
+            imprimirTabuleiro(partida.tab);
+
+            Console.WriteLine();
+            imprimirPecasCapturadas(partida);
+
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.turno);
+            if (partida.jogadorAtual == Cor.MAGENTA)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
+            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            Console.ResetColor();
+        }
+
+        private static void imprimirPecasCapturadas(PartidaDeXadrez partida)
+        {
+            Console.WriteLine("Peças capturada: ");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("Magenta: ");
+            imprimirConjunto(partida.pecasCapturadas(Cor.MAGENTA));
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Amarelo: ");
+            imprimirConjunto(partida.pecasCapturadas(Cor.AMARELO));
+            Console.ResetColor();
+            Console.WriteLine();
+        }
+
+        private static void imprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[ ");
+            foreach (Peca x in conjunto)
+            {
+                Console.Write(x + " ");
+            }
+            Console.Write(" ]");
+        }
 
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
@@ -88,7 +133,7 @@ namespace xadrez
             }
             else
             {
-                if (peca.cor == Cor.BRANCA)
+                if (peca.cor == Cor. MAGENTA)
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.Write(peca);
