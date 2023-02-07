@@ -1,7 +1,10 @@
 # Game Hub 
 ## Descrição do Projeto
-<p>Projeto desenvolvido durante o curso  Sharp Coders da  ima learning place, trata se de um desafio na qual deveria de  ser desenvolvido tres  jogos jogo da  velha, xadrez e batalha naval, neste desafio foi usado a linguagem C#  </p>
+<p>Projeto desenvolvido durante o curso  Sharp Coders da  ima learning place, trata se de um desafio na qual deveria de  ser desenvolvido tres  jogos jogo da  velha, xadrez e batalha naval, neste desafio foi usado a linguagem C#. </p>
 
+ <p>  
+ O projeto todo foi feito para rodar sonete no console.
+ </p>
 
 
 ### Status do projeto
@@ -19,10 +22,13 @@
 
 <hr>
 
-<h1 align="center">
-  <img alt="GameHub" title="#GameHug" src="https://user-images.githubusercontent.com/87122304/217137581-c77ad4f6-ca30-4f52-ae15-136b8cfeb1db.mp4" />
-</h1>
+### Demo Xadrez
 
+  <img alt="Demo Xadrez" title="#Demo Xadrez" src="https://user-images.githubusercontent.com/87122304/217137581-c77ad4f6-ca30-4f52-ae15-136b8cfeb1db.mp4" />
+
+ <p>  
+O projeto apresenta  algumas falhas  na movimentação das peças neste momento, os quais serão corrigidos em breve.
+ </p>
 
 ### 🎲 Para testar o projeto
 
@@ -42,4 +48,5 @@ $ dotnet run
 Para a construction deste projeto foi usado::
 
 - [C#](https://learn.microsoft.com/pt-br/dotnet/csharp/)
+
 
