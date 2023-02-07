@@ -3,7 +3,7 @@
 <p>Projeto desenvolvido durante o curso  Sharp Coders da  ima learning place, trata se de um desafio na qual deveria de  ser desenvolvido tres  jogos jogo da  velha, xadrez e batalha naval, neste desafio foi usado a linguagem C#. </p>
 
  <p>  
- O projeto todo foi feito para rodar sonete no console.
+ O projeto todo foi feito para rodar somente no console.
  </p>
 
 
