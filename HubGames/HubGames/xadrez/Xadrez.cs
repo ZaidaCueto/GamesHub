@@ -1,11 +1,10 @@
 ﻿using model;
 
-
 namespace xadrez
 {
     public class Xadrez
     {
-
+       
         public Xadrez()
         {
             try
@@ -52,10 +51,12 @@ namespace xadrez
                 Console.WriteLine(e.Message);
 
             }
+
+          
             Console.ReadKey();
-
+            
         }
-
+       
 
     }
 }
