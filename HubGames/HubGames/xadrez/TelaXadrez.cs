@@ -16,16 +16,25 @@ namespace xadrez
 
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
-            if (partida.jogadorAtual == Cor.MAGENTA)
+            if (!partida.terminada)
             {
-                Console.ForegroundColor = ConsoleColor.Magenta;
+                if (partida.jogadorAtual == Cor.MAGENTA)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                Console.WriteLine("Aguardando jogada da cor: " + partida.jogadorAtual);
+                Console.ResetColor();
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("XAQUEMATE!!");
+                Console.WriteLine("vencedor: " + partida.jogadorAtual) ;
             }
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-            Console.ResetColor();
+            
         }
 
         private static void imprimirPecasCapturadas(PartidaDeXadrez partida)

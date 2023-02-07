@@ -3,15 +3,14 @@
 namespace controllers
 {
 
-    // movimentos do Bispo todas casas disponiveis nas diagonais
-    public class Bispo : Peca
+    public class Dama : Peca
     {
-        public Bispo(Tabuleiro tab, Cor cor) : base(tab, cor) { }
+        public Dama(Tabuleiro tab, Cor cor) : base(tab, cor) { }
 
 
         public override string ToString()
         {
-            return " B ";
+            return " D ";
         }
 
         private bool podeMover(Posicao pos)
@@ -27,8 +26,8 @@ namespace controllers
             // Posicao pos = new Posicao(0, 0);
             Posicao pos = new(0, 0);
 
-            //validar movimentos possiveis para noroeste
-            pos.DefinirValores(posicao.linha - 1, posicao.coluna - 1);
+            //validar movimentos possiveis esquerda 
+            pos.DefinirValores(posicao.linha , posicao.coluna - 1);
             while (tab.PosicaoValida(pos) && podeMover(pos))
             {
                 matriz[pos.linha, pos.coluna] = true;
@@ -36,11 +35,11 @@ namespace controllers
                 {
                     break;
                 }
-                pos.DefinirValores(pos.linha - 1, pos.coluna - 1);
+                pos.DefinirValores(pos.linha , pos.coluna - 1);
             }
 
-            //validar movimentos possiveis para noreste
-            pos.DefinirValores(posicao.linha - 1, posicao.coluna + 1);
+            //validar movimentos possiveis direita 
+            pos.DefinirValores(posicao.linha, posicao.coluna + 1);
             while (tab.PosicaoValida(pos) && podeMover(pos))
             {
                 matriz[pos.linha, pos.coluna] = true;
@@ -48,11 +47,11 @@ namespace controllers
                 {
                     break;
                 }
-                pos.DefinirValores(pos.linha - 1, pos.coluna + 1);
+                pos.DefinirValores(pos.linha, pos.coluna + 1);
             }
 
-            //validar movimentos possiveis para noroeste
-            pos.DefinirValores(posicao.linha + 1, posicao.coluna + 1);
+            //validar movimentos possiveis acima
+            pos.DefinirValores(posicao.linha - 1, posicao.coluna);
             while (tab.PosicaoValida(pos) && podeMover(pos))
             {
                 matriz[pos.linha, pos.coluna] = true;
@@ -60,11 +59,10 @@ namespace controllers
                 {
                     break;
                 }
-                pos.DefinirValores(pos.linha + 1, pos.coluna + 1);
+                pos.DefinirValores(pos.linha - 1, pos.coluna);
             }
-
-            //validar movimentos possiveis para sudoeste
-            pos.DefinirValores(posicao.linha + 1, posicao.coluna - 1);
+            //validar movimentos possiveis abaixo
+            pos.DefinirValores(posicao.linha + 1, posicao.coluna);
             while (tab.PosicaoValida(pos) && podeMover(pos))
             {
                 matriz[pos.linha, pos.coluna] = true;
@@ -72,13 +70,10 @@ namespace controllers
                 {
                     break;
                 }
-                pos.DefinirValores(pos.linha + 1, pos.coluna - 1);
+                pos.DefinirValores(pos.linha + 1, pos.coluna);
             }
             return matriz;
         }
-
-
-
 
     }
 }

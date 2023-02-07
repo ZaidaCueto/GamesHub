@@ -23,6 +23,9 @@ namespace model
         public void incrementarQtdMovimentos()
         {
         qteMovimentos++;
+        }public void deCrementarQtdMovimentos()
+        {
+        qteMovimentos--;
         }
 
         public  bool existeMovimentosPossiveis()
@@ -40,7 +43,7 @@ namespace model
             }
             return false;
         }
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
             return movimentosPossiveis()[pos.linha, pos.coluna];
         }

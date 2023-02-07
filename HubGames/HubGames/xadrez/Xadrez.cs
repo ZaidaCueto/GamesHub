@@ -17,8 +17,6 @@ namespace xadrez
                     try
                     {
                      
-
-
                         Console.Clear();
                         TelaXadrez.imprimirPatida(partida);
 
@@ -44,6 +42,9 @@ namespace xadrez
                         Console.ReadLine();
                     }
                 }
+
+                Console.Clear() ;
+                TelaXadrez.imprimirPatida(partida);
 
             }
             catch (TabuleiroException e)
